@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First GitHub Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourav's Conversion Tracking Sandbox</title>
+    
+    <!-- PLACE YOUR GTM HEAD CODE RIGHT HERE LATER -->
+    
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 800px; padding: 0 20px; color: #333; }
+        section { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px solid #eee; }
+        .btn { display: inline-block; padding: 12px 24px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; cursor: pointer; border: none; }
+        .btn-call { background-color: #25D366; color: white; }
+        .btn-purchase { background-color: #007bff; color: white; }
+        form { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; max-width: 400px; }
+        input { width: 100%; padding: 10px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .spacer { height: 800px; background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%); padding: 20px; margin: 20px 0; border-left: 4px solid #007bff; }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my brand new website hosted on GitHub Pages!</p>
+    <!-- PLACE YOUR GTM BODY CODE RIGHT HERE LATER -->
+
+    <header>
+        <h1>Sourav's Analytics & Ads Tracking Environment</h1>
+        <p>This website is optimized to test GA4 Enhanced Measurement and Google Ads conversion tags.</p>
+    </header>
+
+    <!-- 1. CALL BUTTON TRACKING SECTION -->
+    <section id="click-tracking-section">
+        <h2>1. Call Button Tracking (Click Events)</h2>
+        <p>Clicking this link will invoke a telephone event. Best tracked via Click URL or Element ID.</p>
+        <a href="tel:+1234567890" id="gtm-call-btn" class="btn btn-call">📞 Call Support Now</a>
+    </section>
+
+    <!-- 2. LEAD FORM SUBMISSION SECTION -->
+    <section id="form-tracking-section">
+        <h2>2. Lead Form Tracking (Form Submissions)</h2>
+        <p>Fill out this form. Best tracked using the Form Submission trigger in GTM filtered by Form ID.</p>
+        <form id="gtm-lead-form" action="/thank-you.html" method="GET" onsubmit="event.preventDefault(); alert('Success! Mock Form Submitted.');">
+            <label for="user-name">Full Name:</label>
+            <input type="text" id="user-name" name="name" placeholder="John Doe" required>
+            
+            <label for="user-email">Email Address:</label>
+            <input type="email" id="user-email" name="email" placeholder="john@example.com" required>
+            
+            <button type="submit" id="gtm-form-submit-btn" class="btn btn-purchase">Submit My Lead</button>
+        </form>
+    </section>
+
+    <!-- 3. PURCHASE TRACKING SECTION -->
+    <section id="ecommerce-section">
+        <h2>3. Purchase Tracking (Custom Events)</h2>
+        <p>Clicking this triggers a simulated monetary conversion. Ideal for passing revenue values to Google Ads.</p>
+        <div style="border: 1px dashed #ccc; padding: 20px; border-radius: 8px; display: inline-block;">
+            <h3>Premium Analytics Course</h3>
+            <p>Price: <strong>$99.00 USD</strong></p>
+            <button id="gtm-purchase-btn" class="btn btn-purchase" onclick="alert('Success! Mock Purchase Complete ($99.00).');">Buy Now</button>
+        </div>
+    </section>
+
+    <!-- 4. SCROLL TRACKING SECTION -->
+    <section id="scroll-tracking-section">
+        <h2>4. Scroll Depth Tracking</h2>
+        <p>Scroll down to the bottom of the page. GA4 will automatically track 25%, 50%, 75%, and 90% scroll depth thresholds.</p>
+        <div class="spacer">
+            <p><em>Scrolling down through this intentional blank space...</em></p>
+        </div>
+        <div class="spacer">
+            <p><em>Deep scrolling active... Almost at 90% depth...</em></p>
+        </div>
+        <p><strong>You reached the bottom!</strong> This completes the scroll measurement check.</p>
+    </section>
+
 </body>
 </html>
